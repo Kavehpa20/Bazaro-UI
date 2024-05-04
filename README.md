@@ -2,4 +2,6 @@
 
 در طراحی این سایت از ابزارهای زیر استفاده شده است :
 
- VITE v5.0.2 + tailwindcss v3.3.5 + autoprefixer
+VITE v5.0.2 + tailwindcss v3.3.5 + autoprefixer
+
+کدنویسی و اجرا : کاوه پژوهش

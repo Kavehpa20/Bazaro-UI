@@ -12,11 +12,9 @@
     />
   </head>
   <body class="relative font-sans">
-    <div
-      x-data="{ open: false }"
-      class= "xl:max-w-[1440px] xl:px-[140px] mx-auto"
-    >
-      <div class="flex lg:justify-between backdrop-blur-sm sticky z-50 top-0 p-14 sm:p-5  mx-auto bg-white bg-opacity-90 shadow-2xl ">
+
+      <header x-data="{ open: false }">
+      <div class="flex lg:justify-between backdrop-blur-sm w-full z-50 top-0 p-14 sm:p-5  mx-auto bg-white bg-opacity-75 fixed shadow-2xl ">
         <div
           class="flex justify-between w-full md:gap-x-10 lg:gap-10 xl:gap-32 items-center"
         >
@@ -59,7 +57,7 @@
             </div>
           </button>
 
-          <div class="hidden lg:flex">
+          <div class="hidden lg:block">
             <ul
               class="md:flex md:text-sm gap-[30px] text-heading-secondary items-center px-[30px]"
             >
@@ -85,6 +83,7 @@
               </li>
             </ul>
           </div>
+
         </div>
         <div class="hidden sm:flex items-center justify-center">
           <ul class="md:flex space-x-4 flex items-center text-slate-900">
@@ -174,8 +173,9 @@
           </li>
         </ul>
       </div>
+      </header>
 
-      <main>
+      <main class="xl:max-w-[1440px] xl:px-[140px] mx-auto mt-28">
 
         <section
         class="bg-[url('./src/assets/images/bg.svg')] bg-no-repeat bg-cover flex justify-center items-center mt-16 container mx-auto">
@@ -243,7 +243,6 @@
           </div>
         </div>
       </section>
-  
       <p class="font-semibold text-2xl mt-20 text-center">چه ویژگی هایی داره؟</p>
       <section class="grid grid-cols1 lg:grid-cols-2 gap-8 justify-center items-center w-full mt-5 container mx-auto">
         <div class="flex items-center justify-center relative h-96 lg:h-auto">
@@ -480,8 +479,8 @@
     
   
       </main>
-    </div>
- <footer class="bg-slate-200 w-full mt-20">
+
+    <footer class="bg-slate-200 w-full mt-20">
       <div class="container mx-auto">
         <section class="bg-image  py-6 md:max-w[1160px] mx-auto md:px-[140px] h-80 flex items-center justify-center flex-col text-2xl">
           <p class="font-semibold">همکاران ما</p>
@@ -499,8 +498,6 @@
         
           </div>
         </section>
-        
-        
           <section  class=" md:max-w[1160px] mx-auto md:px-[140px] flex justify-between items-center md:py-6">
                 <div  class="">
                     <div >
@@ -632,10 +629,7 @@
                   </p>
               </div>
           </div>
-        
- 
         </section>
-      
     </footer>
 
     <a
@@ -655,5 +649,3 @@
     ></script>
   </body>
 </html>
-
-<!-- https://www.figma.com/file/CmUmsXa27vZ7Tlw57lpD47/Untitled-(Copy)?type=design&node-id=0%3A1&mode=design&t=TFeRW2wDIwtLqQ9i-1 -->
