@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>بازارو- فروشگاه ها</title>
+    <link rel="icon" href="./src/assets/images/500 1.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+  </head>
+  <body class="relative font-sans">
+    <div
+      x-data="{ open: false }"
+      class= "xl:max-w-[1440px] xl:px-[140px] mx-auto"
+    >
+      <div class="flex lg:justify-between backdrop-blur-sm sticky z-50 top-0 p-14 sm:p-5  mx-auto bg-white bg-opacity-90 shadow-2xl ">
+        <div
+          class="flex justify-between w-full md:gap-x-10 lg:gap-10 xl:gap-32 items-center"
+        >
+          <a href="index.html" class="cursor-pointer">
+            <img src="./src/assets/images/logo.png" alt="logo" />
+          </a>
+
+          <button
+            @click="open = !open"
+            class="sm:hidden text-slate-950 focus:outline-none focus:border-2 focus:border-primary focus:ring-primary block rounded-md focus:ring-1 p-2 font-bold"
+          >
+            <div class="w-6 h-6 relative focus-visible:border">
+              <svg
+                x-show="!open"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+              <svg
+                x-show="open"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </div>
+          </button>
+
+          <div class="hidden lg:flex">
+            <ul
+              class="md:flex md:text-sm gap-[30px] text-heading-secondary items-center px-[30px]"
+            >
+              <li
+                class="font-bold nav-link relative hover:after:opacity-100 hover:after:visible after:transition-all hover:text-disbale"
+              >
+                <a href="#">صفحه اول</a>
+              </li>
+              <li
+                class="nav-link relative hover:after:opacity-100 hover:after:visible after:transition-all hover:text-disbale"
+              >
+                <a href="#">فروشگاه ها</a>
+              </li>
+              <li
+                class="nav-link relative hover:after:opacity-100 hover:after:visible after:transition-all hover:text-disbale"
+              >
+                <a href="#">مرکز کمک</a>
+              </li>
+              <li
+                class="nav-link relative hover:after:opacity-100 hover:after:visible after:transition-all hover:text-disbale"
+              >
+                <a href="#">بلاگ</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="hidden sm:flex items-center justify-center">
+          <ul class="md:flex space-x-4 flex items-center text-slate-900">
+            <li
+              class="flex items-center justify-center shadow bg-blue-500 py-4 rounded-3xl w-44 cursor-pointer mx-auto"
+            >
+              <div class="px-3 rounded-lg">
+                <img src="./src/assets/images/Arrow - Down Square.svg" />
+              </div>
+              <span class="text-slate-50 text-sm whitespace-nowrap">
+                دانلود اپلیکشن</span
+              >
+            </li>
+
+            <li>
+              <button
+                @click="open = !open"
+                class="lg:hidden text-slate-950 focus:outline-none focus:border-2 focus:border-primary focus:ring-primary rounded-md p-2 m-2 font-bold mx-5"
+              >
+                <div class="w-6 h-6 relative focus-visible:border">
+                  <svg
+                    x-show="!open"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                  <svg
+                    x-show="open"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </div>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        x-show="open"
+        x-transition:enter="transform ease-out duration-300 transition-translate-opacity"
+        x-transition:enter-start="translate-y-10 opacity-0"
+        x-transition:enter-end="translate-y-0 opacity-100"
+        x-transition:leave="transform ease-in duration-300 transition-translate-opacity"
+        x-transition:leave-start="translate-y-0 opacity-100"
+        x-transition:leave-end="opacity-0"
+        class="relative"
+      >
+        <ul
+          class="p-4 text-heading-secondary space-y-4 absolute bg-white rounded-md flex flex-col justify-center left-0 w-full shadow-2xl"
+        >
+          <li
+            class="font-bold nav-link relative hover:after:opacity-100 hover:after:visible after:transition-all hover:text-disbale"
+          >
+            <a href="#">صفحه اول</a>
+          </li>
+          <li
+            class="nav-link relative hover:after:opacity-100 hover:after:visible after:transition-all hover:text-disbale"
+          >
+            <a href="#">فروشگاه ها</a>
+          </li>
+          <li
+            class="nav-link relative hover:after:opacity-100 hover:after:visible after:transition-all hover:text-disbale"
+          >
+            <a href="#">مرکز کمک</a>
+          </li>
+          <li
+            class="nav-link relative hover:after:opacity-100 hover:after:visible after:transition-all hover:text-disbale"
+          >
+            <a href="#">بلاگ</a>
+          </li>
+        </ul>
+      </div>
+
+      <main>
+
+        <section
+        class="bg-[url('./src/assets/images/bg.svg')] bg-no-repeat bg-cover flex justify-center items-center mt-16 container mx-auto">
+        <div
+          class="bg-white bg-opacity-80 grid grid-cols-1 lg:grid-cols-2 gap-10 place-content-around items-center w-full">
+          <div class="flex flex-col lg:pr-20 gap-4">
+            <p class="text-blue-800 text-4xl font-black leading-snug text-center lg:text-right mb-4">با نصب
+              <strong class="text-sky-500">اپلیکیشن
+                بازارو</strong>مشتریان
+              جدیدی اطراف سوپر مارکت، فست فود
+              یا رستوران و غذای خانگی خود پیدا کنید.
+            </p>
+            <p class="text-lg w-full lg:w-2/3">ممکن است در محیط اطراف شما بسیاری از مردم از خدمات و قیمت خوب شما آگاهی
+              نداشته باشند.
+              با
+              نصب
+              بازارو می توانید مشتریان جدید پیدا کنید و بدون واسطه با آن ها گفتگو کنید و فروش خود را بیشتر کنید.</p>
+            <form class="relative lg:w-4/6">
+              <input type="number" placeholder="لطفا شماره همراه خود را وارد نمایید"
+                class="w-full border placeholder:-translate-x-6 border-gray-300 py-3 px-6 rounded-xl focus:outline-none focus:ring focus:ring-sky-500 focus:border-sky-500 pr-8">
+              <button class="absolute bottom-1 right-2 z-10 p-2 rounded-lg bg-white" name="submit-btn"
+                aria-label="submit-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path opacity="0.6" d="M11 3.00037H20.9999V11.0003H17.9999L13.9999 13.0003V11.0003H11V3.00037Z"
+                    stroke="#54C5D0" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M14.9999 16.0005V20.0004C14.9999 20.5504 14.5499 21.0004 13.9999 21.0004H5.99994C5.43994 21.0004 4.99994 20.5504 4.99994 20.0004V6.00051C4.99994 5.44049 5.43994 5.00049 5.99994 5.00049H7.99991"
+                    stroke="#0C79F8" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M9.99991 18.0004V18.0104" stroke="#0C79F8" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </button>
+            </form>
+            <div class="flex justify-center lg:justify-start gap-5 mt-14">
+              <div class="flex flex-row items-center gap-4">
+                <a href="#"
+                  class="flex items-center rounded-lg bg-blue-700 px-2 lg:px-4 w-36 lg:w-auto py-1 lg:py-2 text-white lg:gap-3 lg:text-lg lg:font-semibold">
+                  <span class="flex flex-col font-thin text-sm">
+                    <span class="font-light text-xs text-gray-300">
+                      Get it on
+                    </span>
+                    Google Play
+                  </span>
+                  <span>
+                   <img src="./src/assets/images/00.svg" alt="">
+                  </span>
+                </a>
+                <a href="#"
+                  class="flex items-center rounded-lg bg-blue-700 px-2 lg:px-4 w-36 lg:w-auto py-1 lg:py-2 text-white lg:gap-3 lg:text-lg lg:font-semibold">
+                  <span class="flex flex-col font-thin text-sm">
+                    <span class="font-light text-xs text-gray-300">
+                      Cafe Bazar
+                    </span>
+                    دانلود از کافه بازار
+                  </span>
+                  <span>
+                    <img src="./src/assets/images/image 15.png" alt="">
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center justify-center">
+            <img src="./src/assets/images/Screenshot 2023-12-02 142040.png" class="w-3/4" alt="">
+          </div>
+        </div>
+      </section>
+  
+      <p class="font-semibold text-2xl mt-20 text-center">چه ویژگی هایی داره؟</p>
+      <section class="grid grid-cols1 lg:grid-cols-2 gap-8 justify-center items-center w-full mt-5 container mx-auto">
+        <div class="flex items-center justify-center relative h-96 lg:h-auto">
+          <img src="./src/assets/images/Ellipse 2691.png" class="absolute z-10" alt="">
+          <img src="./src/assets/images/App Mockup - Right Side.png" class="absolute left-22 lg:left-28.25 z-20" alt="">
+          <img src="./src/assets/images/App Mockup - Right Side-1.png" class="absolute z-30" alt="">
+          <img src="./src/assets/images/image 293.png" class="absolute z-40 right-10 top-72 lg:top-20" alt="">
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-2 px-4">
+          <div class="flex flex-col gap-5">
+            <div class=" my-16 relative">
+              <img src="./src/assets/images/Rectangle 86441.png" class="absolute" alt="">
+              <img src="./src/assets/images/Icon1.png" class="absolute top-3 right-3" alt="">
+            </div>
+            <p class="font-semibold text-lg">گفتگوی بی واسطه با مشتری</p>
+            <p class="font-thin text-sm text-gray-400 w-3/4">مشرتریان اطرافتون شما رو در بازارو پیدا می کنند و با یک
+              گفتگوی بی واسطه به شما سفارش محصول می دهند . گفتگو کنید و آنها را مشتری ثابت خود کنید.</p>
+          </div>
+          <div class="flex flex-col gap-5">
+            <div class=" my-16 relative">
+              <img src="./src/assets/images/Rectangle 8644.png" class="absolute" alt="">
+              <img src="./src/assets/images/Icon.png" class="absolute top-5 right-3" alt="">
+            </div>
+            <p class="font-semibold text-lg">تنظیم تخفیف نامحدود</p>
+            <p class="font-thin text-sm text-gray-400 w-3/4">بسته به برند، نوع محصول یا برحسب قدرت خرید مشتری می تونین ،
+              تخفیف
+              های متنوعی را
+              با درصد
+              های متفاوت تنظیم
+              کنید.</p>
+          </div>
+          <div class="flex flex-col gap-5">
+            <div class=" my-16 relative">
+              <img src="./src/assets/images/Rectangle 86442.png" class="absolute" alt="">
+              <img src="./src/assets/images/Icon2.png" class="absolute top-5 right-3" alt="">
+            </div>
+            <p class="font-semibold text-lg">انتخاب دستیار</p>
+            <p class="font-thin text-sm text-gray-400 w-3/4">با انتخاب دستیار می توانید حتی زمانی که سفر هستید یا سفارش
+              های زیادی دارید ، می توانید از همکار دیگرتان برای مدیریت سفارش هایتان کمک بگیرید . </p>
+          </div>
+          <div class="flex flex-col gap-5">
+            <div class=" my-16 relative">
+              <img src="./src/assets/images/Rectangle 86443.png" class="absolute" alt="">
+              <img src="./src/assets/images/Icon3.png" class="absolute top-5 right-3" alt="">
+            </div>
+            <p class="font-semibold text-lg">مشخص کردن هزینه ارسال</p>
+            <p class="font-thin text-sm text-gray-400 w-3/4">هزینه ارسال خود را می توانید بر اساس برنامه فروش خود مشخص
+              کنید. به حتم هر کسب و کاری که هزینه ارسال کمتری داره از دید مشتری در اولویته</p>
+          </div>
+        </div>
+  
+      </section>
+      
+        <section
+          class="container mx-auto flex mt-10 items-center justify-center w-full text-center"
+        >
+          <h1 class="text-heading-secondary p-4 text-3xl font-bold">
+            چجوری کار می‌کنه؟
+          </h1>
+        </section>
+
+        <section
+          class="container mx-auto grid grid-cols-1 lg:grid-cols-2 my-10 h-[800px]"
+        >
+          <div
+            class="py-5 grid gap-8 w-full h-full lg:w-[404px] lg:h-[190px] mx-auto lg:mx-0"
+          >
+            <div
+              class="shadow-xl rounded-2xl grid gap-2 p-10 shadow-gray-300 opacity-50"
+            >
+              <div class="flex gap-4 items-center">
+                <div
+                  class="bg-gradient-to-r from-[#00c3fe] to-[#0077FE] rounded-full h-10 w-10 flex items-center justify-center text-white font-IRANSans"
+                >
+                  1
+                </div>
+                <h1 class="text-heading-secondary font-bold">
+                  پیام جدید را پاسخ دهید
+                </h1>
+              </div>
+              <p class="text-sm leading-6">
+                تنها منتظر این باشید که تا چند ثانیه بعد یک پیام جدید برای شما
+                در لیست سفارش ها ثبت شود . این یعنی یک مشتری به جمع مشتریان شما
+                اضافه شد ..
+              </p>
+            </div>
+            <div class="shadow-xl rounded-2xl grid gap-2 p-10 shadow-gray-300">
+              <div class="flex gap-4 items-center">
+                <div
+                  class="bg-gradient-to-r from-[#00c3fe] to-[#0077FE] rounded-full h-10 w-10 flex items-center justify-center text-white font-IRANSans"
+                >
+                  2
+                </div>
+                <h1 class="text-heading-secondary font-bold">
+                  گفتگو کنید و فاکتور بزنید
+                </h1>
+              </div>
+              <p class="text-sm leading-6">
+                مشتری نیاز خود را به صورت پیام صوتی یا متنی ارسال می کند و شما
+                در باره محصول یا خدمت درخواستی مشتری با آن گفتگو کنید و بعد
+                فاکتور بزنید.
+              </p>
+            </div>
+
+            <div
+              class="shadow-xl rounded-2xl grid gap-2 p-10 shadow-gray-300 opacity-50"
+            >
+              <div class="flex gap-4 items-center">
+                <div
+                  class="bg-gradient-to-r from-[#00c3fe] to-[#0077FE] rounded-full h-10 w-10 flex items-center justify-center text-white font-IRANSans"
+                >
+                  3
+                </div>
+                <h1 class="text-heading-secondary font-bold">
+                  سفارش را آماده و ارسال کنید.
+                </h1>
+              </div>
+              <p class="text-sm leading-6">
+                فاکتور را مشاهده و تایید می کند و بعد از آن سفارش را آماده و در
+                لیست سفارش ها دکمه «ارسال» را فشار دهید . راستی آدرس مشتری را
+                بالای صفحه چت دارید.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="w-4/5 m-6 mx-auto flex items-start justify-center px-6 relative"
+          >
+            <img
+              src="./src/assets/images/Background.svg"
+              alt=""
+              class="relative z-0"
+            />
+            <div class="flex absolute z-10 items-center justify-center w-full">
+              <div class="cursor-pointer">
+                <i
+                  class="bi bi-arrow-right-short text-arrow rounded-full text-3xl shadow-lg w-14 h-14 flex items-center justify-center bg-white border border-[#f4f4f4] shadow-[#f9eded]"
+                ></i>
+              </div>
+              <img src="./src/assets/images/Image.png" class="" alt="" />
+              <div class="cursor-pointer">
+                <i
+                  class="bi bi-arrow-left-short text-arrow rounded-full text-3xl shadow-lg w-14 h-14 flex items-center justify-center bg-white border border-[#f4f4f4] shadow-[#f9eded]"
+                ></i>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="container mx-auto mt-[350px] sm:mt-[450px] md:mt-[550px] lg:my-0 w-full"
+        >
+          <div
+            class="grid grid-cols-1 lg:grid-cols-2 bg-gradient-to-r from-[#115ed4] to-[#0646a7] rounded-[60px] py-20 gap-x-36"
+          >
+            <div class="flex flex-col gap-10 mx-auto py-16">
+              <h1 class="text-yellow-300 font-black md:text-4xl leading-10">
+                بازارو همیشه در کنار شما!
+              </h1>
+              <div
+                class="text-white w-full text-sm md:w-[433px] md:text-[15px] sm:font-extralight lg:font-normal text-justify"
+              >
+                مشرتریان اطرافتون شما رو در بازارو پیدا می کنند و با یک گفتگوی
+                بی واسطه به شما سفارش محصول می دهند . گفتگو کنید و آنها را مشتری
+                ثابت خود کنید.مشرتریان اطرافتون شما رو در بازارو پیدا می کنند و
+                با یک گفتگوی بی واسطه به شما سفارش محصول می دهند . گفتگو کنید و
+                آنها را مشتری ثابت خود کنید.
+              </div>
+
+              <div class="grid gap-5">
+                <div class="text-slate-50 flex items-center gap-3">
+                  <img src="./src/assets/images/Tick Square.svg" alt="" />
+                  <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم میباشد</p>
+                </div>
+                <div class="text-slate-50 flex items-center gap-3">
+                  <img src="./src/assets/images/Tick Square.svg" alt="" />
+                  <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم میباشد</p>
+                </div>
+                <div class="text-slate-50 flex items-center gap-3">
+                  <img src="./src/assets/images/Tick Square.svg" alt="" />
+                  <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم میباشد</p>
+                </div>
+              </div>
+              <div
+                class="flex items-center gap-5 justify-start flex-col sm:flex-row"
+              >
+                <button class="bg-yellow-400 p-4 rounded-xl">
+                  <a class="text-slate-50 flex items-center gap-3" href="#">
+                    <img src="./src/assets/images/google-play.svg" alt="" />
+
+                    <div
+                      class="whitespace-nowrap text-heading-secondary text-sm"
+                    >
+                      دانلود اپ از <span class="font-bold">گوگل پلی</span>
+                    </div>
+                  </a>
+                </button>
+                <button class="bg-yellow-400 p-4 rounded-xl">
+                  <a class="text-slate-50 flex items-center gap-3" href="#">
+                    <img src="./src/assets/images/appStore.svg" alt="" />
+
+                    <div
+                      class="whitespace-nowrap text-heading-secondary text-sm"
+                    >
+                      دانلود اپ از <span class="font-bold">اپ استور</span>
+                    </div>
+                  </a>
+                </button>
+              </div>
+            </div>
+            <div
+              class=" w-3/6 mx-auto flex items-center justify-center relative"
+            >
+              <img
+                src="./src/assets/images/photo_2021-08-24_10-48-50 1.png"
+                class="relative z-20"
+                alt=""
+              />
+              <img
+                src="./src/assets/images/Mockup.png"
+                class="relative h-4/5 left-[80px] md:left-[50px] lg:left-10 xl:left-0 z-10"
+                alt=""
+              />
+
+              <img
+                src="./src/assets//images/Mockup2.png"
+                alt=""
+                class="relative h-4/6 z-0 left-[120px] md:left-[100px] lg:left-20 xl:left-0"
+              />
+            </div>
+          </div>
+        </section>
+
+    
+  
+      </main>
+    </div>
+ <footer class="bg-slate-200 w-full mt-20">
+      <div class="container mx-auto">
+        <section class="bg-image  py-6 md:max-w[1160px] mx-auto md:px-[140px] h-80 flex items-center justify-center flex-col text-2xl">
+          <p class="font-semibold">همکاران ما</p>
+          <p class="md:text-[13px] text-xs">برخی از برندهایی که در این ۱۰ سال افتخاری همکاری با آن‌ها را داشته‌ایم</p>
+          <div class="  md:mx-8 md:mt-8 grid grid-cols-4 gap-4">
+        
+            <img src="./src/assets/images/takejoubar 10.png" alt="" class="cursor-pointer grayscale hover:filter-none md:w-[90px] md:h-[90px] w-[45px] h-[45px] bg-custom">
+            <img src="./src/assets/images/takejoubar 11.png" alt="" class="cursor-pointer grayscale hover:filter-none md:w-[90px] md:h-[90px] w-[45px] h-[45px] bg-custom">
+            <img src="./src/assets/images/takejoubar 12.png" alt="" class="cursor-pointer grayscale hover:filter-none md:w-[90px] md:h-[90px] w-[45px] h-[45px] bg-custom">
+            <img src="./src/assets/images/takejoubar 13.png" alt="" class="cursor-pointer grayscale hover:filter-none md:w-[90px] md:h-[90px] w-[45px] h-[45px] bg-custom">
+            <img src="./src/assets/images/takejoubar 14.png" alt="" class="cursor-pointer grayscale hover:filter-none md:w-[90px] md:h-[90px] w-[45px] h-[45px] bg-custom">
+            <img src="./src/assets/images/takejoubar 15.png" alt="" class="cursor-pointer grayscale hover:filter-none md:w-[90px] md:h-[90px] w-[45px] h-[45px] bg-custom">
+            <img src="./src/assets/images/takejoubar 16.png" alt="" class="cursor-pointer grayscale hover:filter-none md:w-[90px] md:h-[90px] w-[45px] h-[45px] bg-custom">
+            <img src="./src/assets/images/Group 3.png" alt="" class="cursor-pointer grayscale hover:filter-none md:w-[90px] md:h-[90px] w-[45px] h-[45px] bg-custom">
+        
+          </div>
+        </section>
+        
+        
+          <section  class=" md:max-w[1160px] mx-auto md:px-[140px] flex justify-between items-center md:py-6">
+                <div  class="">
+                    <div >
+                        <div  class="flex flex-col md:flex-row md:justify-between ">
+                            <div class="" >
+                                <p  class="font-bold text-center md:text-start mb-4 text-base">تماس‌باما</p>
+                                <ul  class="list-unstyled flex flex-col gap-3 ">
+                                    <li  class="flex  md:items-start items-center gap-3 text-sm">
+                                        <img  src="./src/assets/images/Icon_ Location.png" alt="" class="cursor-pointer">
+                                        <p >تهران - نارمک - کوی شهید نخعی - پلاک ۱۴</p>
+                                    </li>
+                                    <li  class="flex items-start gap-3 text-sm">
+                                        <img  src="./src/assets/images/Icon_ Phone.png" alt="" class="cursor-pointer">
+                                        <p >۰۲۱-۷۷۹۷۸۵۹۶</p>
+                                    </li>
+                                    <li  class="flex items-start gap-3 text-sm">
+                                        <img  src="./src/assets/images/Icon_ Fax.png" alt="" class="cursor-pointer">
+                                        <p >۰۲۱-۷۷۹۷۸۵۹۶</p>
+                                    </li>
+                                    <li  class="flex items-start gap-3 text-sm">
+                                        <img  src="./src/assets/images/Icon_ Mail.png" alt="" class="cursor-pointer">
+                                        <p >Info@bazaro.ir</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="flex gap-2">
+                            <div  class="flex w-auto justify-around gap-md-5 pb-5">
+                                <div  class="flex flex-col g-5">
+                                    <p  class="font-bold mb-4 text-base">بازارو</p>
+                                    <ul  class=" flex flex-col gap-3 text-sm">
+                                        <li  class="flex items-start gap-3">
+                                            <a  href="#">صفحه اول</a>
+                                        </li>
+                                        <li  class="flex items-start gap-3">
+                                            <a  href="#">بلاگ</a>
+                                        </li>
+                                        <li  class="flex items-start gap-3">
+                                            <a  href="#">مرکز کمک</a>
+                                        </li>
+                                        <li  class="flex items-start gap-3">
+                                            <a  href="#">قوانین و مقررات</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                              </div>
+                                <div >
+                                    <p class="font-bold mb-4 text-base">دسترسی سریع</p>
+                                    <ul  class="list-unstyled flex flex-col gap-3 text-sm">
+                                        <li  class="flex items-start gap-3">
+                                            <a  href="#">راهنمای استفاده</a>
+                                        </li>
+                                        <li  class="flex items-start gap-3">
+                                            <a  href="#">نحوه ثبت سفارش</a>
+                                        </li>
+                                        <li  class="flex items-start gap-3">
+                                            <a  href="#">شیوه های پرداخت</a>
+                                        </li>
+                                        <li  class="flex items-start gap-3">
+                                            <a  href="#">فرصت های شغلی </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                              </div>
+        
+                            <div>
+                                <p  class="font-bold mb-4 text-center md:text-start text-base">
+                                    دانلود اپلیکیشن مشتریان بازارو
+                                </p>
+                                <div  class="flex flex-col lg:flex-row mb-5 gap-3">
+        
+                                        <img  src="./src/assets/images/Button_ Download App (1).png" alt="" class="h-16 w-52 cursor-pointer">
+        
+        
+        
+                                        <img  src="./src/assets/images/Button_ Download App.png" alt="" class="h-16 w-52 cursor-pointer">
+        
+        
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div  class="md:flex gap-5 mb-5">
+                            <div  class="w-100 md:w-3/4 mb-5 md:mb-0 text-sm text-center md:text-start">
+                                <p class="">
+                                    بازارو یک اپلیکیشن مکالمه محور موبایلیه که برای تسهیل و
+                                    تسریع خرید و فروش بین کسب و کارهای کوچیک و مشتری ها شکل
+                                    گرفته است. شما می توانید فروشگاه هی را که قصد خرید از آن ها
+                                    را دارید، بر اساس نوع، موقعیت فعلی ، تخفیف و ویژگی های دیگر
+                                    پیدا کنید و با آنها در یک بستر مکالمه محور گفتگو کنید، تخفیف
+                                    بگیرید و دقیقا همان محصول با برند مورد نظر خود را بدون واسطه
+                                    دریافت کنید.
+                                </p>
+                            </div>
+                            <div  class="flex flex-col md:flex-row items-center gap-2 md:gap-2">
+                                <div  class="flex mb-4 justify-center items-center gap-3">
+                                    <div class="w-14 h-20" >
+                                        <img  src="./src/assets/images/image 272.png" alt="" >
+                                    </div>
+                                    <div   class="w-14 h-20 mb-6">
+                                        <img  src="./src/assets/images/image 270.svg" alt=""  >
+                                    </div>
+                                    <div   class="w-14 h-20">
+                                      <img  src="./src/assets/images/image 271.svg" alt=" max" >
+                                  </div>
+                                    </div>
+                                </div>
+        
+                            </div>
+                        </div>
+                </div>
+        
+            
+            <div  class="md:max-w[1160px] mx-auto md:px-[140px] flex justify-between items-center flex-col md:flex-row py-6 container bg-slate-200">
+              <div  class="flex justify-center gap-5 order-2 mb-3">
+                  <a  class=" flex items-center justify-center rounded-full bg-white" href="" target="">
+                      <img  src="./src/assets/images/Group 2025.png" alt="IconInstagram">
+                  </a>
+                  <a  class=" flex items-center justify-center rounded-full bg-white" href="" target="">
+                      <img  src="./src/assets/images/Group 2024.svg" alt="Telegram">
+                  </a>
+                  <a  class=" flex items-center justify-center rounded-full bg-white" href="" target="">
+                      <img  src="./src/assets/images/Group 2023.png" alt="Twitter">
+                  </a>
+              </div>
+              <div class="flex items-center justify-center md:items-start md:justify-start w-1/2 md:w-4/5">
+                  <p  class="m-0 text-xs ">
+                      تمامی حقوق مادی و معنوی این وبسایت متعلق به بازارو می باشد و هر
+                      گونه کپی برداری پیگرد قانونی دارد.
+                  </p>
+              </div>
+          </div>
+        
+ 
+        </section>
+      
+    </footer>
+
+    <a
+    id="scrollup"
+    class="rounded-full bg-primary hover:bg-blue-800 py-3 fixed bottom-10 left-10 z-50 hidden"
+    href="#"
+  >
+    <i class="bi bi-arrow-up text-white p-4"></i>
+  </a>
+    
+
+    <script type="module" src="./main.js"></script>
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.1/dist/cdn.min.js"
+    ></script>
+  </body>
+</html>
+
+<!-- https://www.figma.com/file/CmUmsXa27vZ7Tlw57lpD47/Untitled-(Copy)?type=design&node-id=0%3A1&mode=design&t=TFeRW2wDIwtLqQ9i-1 -->
